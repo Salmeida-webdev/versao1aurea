@@ -1,0 +1,14 @@
+# =========================================
+# ROBOTS.TXT — Áurea Estética
+# =========================================
+
+User-agent: *
+Allow: /
+
+# Bloquear pastas desnecessárias (caso existam futuramente)
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+
+# Sitemap
+Sitemap: https://aureaestetica.com.br/sitemap.xml

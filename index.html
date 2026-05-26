@@ -1,0 +1,819 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Áurea Estética | Clínica de Estética Avançada</title>
+
+    <meta
+      name="description"
+      content="Áurea Estética é uma clínica premium especializada em tratamentos faciais, corporais e estética avançada com foco em naturalidade, segurança e autoestima."
+    />
+    <meta
+      name="keywords"
+      content="clínica de estética, estética avançada, harmonização facial, botox, skinbooster, bioestimulador, limpeza de pele, depilação a laser"
+    />
+    <meta name="author" content="Segundo Almeida" />
+    <meta name="robots" content="index, follow" />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Áurea Estética | Clínica de Estética Avançada"
+    />
+    <meta
+      property="og:description"
+      content="Tratamentos estéticos sofisticados, seguros e personalizados para realçar sua beleza natural."
+    />
+    <meta property="og:image" content="assets/images/og/og-image.webp" />
+
+    <meta name="theme-color" content="#f7f4f1" />
+
+    <link rel="icon" type="image/webp" href="assets/logos/favicon.webp" />
+
+    <link
+      rel="preload"
+      as="image"
+      href="assets/images/hero/hero-main.webp"
+      media="(min-width: 769px)"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/images/hero/hero-mobile.webp"
+      media="(max-width: 768px)"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BeautySalon",
+        "name": "Áurea Estética",
+        "description": "Clínica premium de estética avançada especializada em tratamentos faciais, corporais e protocolos personalizados.",
+        "image": "assets/images/og/og-image.webp",
+        "telephone": "+5583998326680",
+        "priceRange": "$$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Av. das Flores, 1280",
+          "addressLocality": "João Pessoa",
+          "addressRegion": "PB",
+          "postalCode": "58000-000",
+          "addressCountry": "BR"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "08:00",
+            "closes": "19:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "08:00",
+            "closes": "13:00"
+          }
+        ]
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="loader" id="loader" aria-hidden="true">
+      <div class="loader__mark">
+        <img src="assets/logos/aurea-symbol.webp" alt="" />
+      </div>
+    </div>
+
+    <header class="header" id="header">
+      <div class="container header__container">
+        <a
+          href="#home"
+          class="header__logo"
+          aria-label="Áurea Estética - Início"
+        >
+          <img src="assets/logos/aurea-logo-light.webp" alt="Áurea Estética" />
+        </a>
+
+        <nav class="nav" id="nav" aria-label="Menu principal">
+          <a href="#home">Início</a>
+          <a href="#tratamentos">Tratamentos</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#resultados">Resultados</a>
+          <a href="#depoimentos">Depoimentos</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contato">Contato</a>
+        </nav>
+
+        <a
+          href="https://wa.me/5583998326680?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20%C3%81urea%20Est%C3%A9tica%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o."
+          class="btn btn--small header__cta"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Agendar avaliação
+        </a>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          type="button"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <picture class="hero__bg">
+          <source
+            srcset="assets/images/hero/hero-mobile.webp"
+            media="(max-width: 768px)"
+          />
+          <img
+            src="assets/images/hero/hero-main.webp"
+            alt="Clínica estética premium Áurea"
+          />
+        </picture>
+
+        <div class="hero__overlay"></div>
+
+        <div class="container hero__container">
+          <div class="hero__content reveal">
+            <span class="eyebrow">Clínica de estética avançada</span>
+
+            <h1>Realce sua beleza natural com tratamentos sofisticados.</h1>
+
+            <p>
+              Tecnologia, segurança e naturalidade para elevar sua autoestima
+              com resultados elegantes, harmônicos e cuidadosamente planejados
+              para você.
+            </p>
+
+            <div class="hero__actions">
+              <a
+                href="https://wa.me/5583998326680?text=Ol%C3%A1%2C%20quero%20agendar%20minha%20avalia%C3%A7%C3%A3o%20na%20%C3%81urea%20Est%C3%A9tica."
+                class="btn btn--primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Agendar avaliação
+              </a>
+
+              <a href="#tratamentos" class="btn btn--ghost"
+                >Conhecer tratamentos</a
+              >
+            </div>
+
+            <div class="hero__trust">
+              <div>
+                <strong>+5 anos</strong>
+                <span>de experiência</span>
+              </div>
+              <div>
+                <strong>Protocolos</strong>
+                <span>personalizados</span>
+              </div>
+              <div>
+                <strong>Resultados</strong>
+                <span>naturais</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="authority">
+        <div class="container authority__grid">
+          <article class="authority__item reveal">
+            <span>01</span>
+            <h3>Procedimentos seguros</h3>
+            <p>
+              Protocolos pensados para preservar sua naturalidade com
+              responsabilidade estética.
+            </p>
+          </article>
+
+          <article class="authority__item reveal">
+            <span>02</span>
+            <h3>Atendimento personalizado</h3>
+            <p>
+              Cada tratamento é planejado após avaliação individual e escuta
+              cuidadosa.
+            </p>
+          </article>
+
+          <article class="authority__item reveal">
+            <span>03</span>
+            <h3>Experiência premium</h3>
+            <p>
+              Ambiente sofisticado, acolhedor e preparado para uma jornada de
+              cuidado completa.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section treatments" id="tratamentos">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="eyebrow">Tratamentos</span>
+            <h2>
+              Protocolos estéticos para valorizar sua beleza com elegância.
+            </h2>
+            <p>
+              Soluções faciais e corporais com foco em naturalidade,
+              sofisticação e segurança em cada detalhe.
+            </p>
+          </div>
+
+          <div class="treatments__grid">
+            <article class="treatment-card reveal">
+              <img
+                src="assets/images/treatments/botox.webp"
+                alt="Procedimento de botox em clínica estética premium"
+                loading="lazy"
+                decoding="async"
+              />
+              <div>
+                <span>01</span>
+                <h3>Botox</h3>
+                <p>
+                  Suavização de linhas de expressão com resultado leve, refinado
+                  e natural.
+                </p>
+              </div>
+            </article>
+
+            <article class="treatment-card reveal">
+              <img
+                src="assets/images/treatments/harmonizacao.webp"
+                alt="Harmonização facial natural em ambiente premium"
+                loading="lazy"
+                decoding="async"
+              />
+              <div>
+                <span>02</span>
+                <h3>Harmonização facial</h3>
+                <p>
+                  Equilíbrio dos traços faciais com planejamento estético
+                  individualizado.
+                </p>
+              </div>
+            </article>
+
+            <article class="treatment-card reveal">
+              <img
+                src="assets/images/treatments/skinbooster.webp"
+                alt="Tratamento skinbooster para pele luminosa"
+                loading="lazy"
+                decoding="async"
+              />
+              <div>
+                <span>03</span>
+                <h3>Skinbooster</h3>
+                <p>
+                  Hidratação profunda para textura, viço e luminosidade natural
+                  da pele.
+                </p>
+              </div>
+            </article>
+
+            <article class="treatment-card reveal">
+              <img
+                src="assets/images/treatments/bioestimulador.webp"
+                alt="Bioestimulador de colágeno em clínica estética"
+                loading="lazy"
+                decoding="async"
+              />
+              <div>
+                <span>04</span>
+                <h3>Bioestimulador</h3>
+                <p>
+                  Estímulo gradual de colágeno para firmeza, rejuvenescimento e
+                  sofisticação.
+                </p>
+              </div>
+            </article>
+
+            <article class="treatment-card reveal">
+              <img
+                src="assets/images/treatments/limpeza-pele.webp"
+                alt="Limpeza de pele premium"
+                loading="lazy"
+                decoding="async"
+              />
+              <div>
+                <span>05</span>
+                <h3>Limpeza de pele</h3>
+                <p>
+                  Cuidado essencial para uma pele mais saudável, limpa e
+                  preparada.
+                </p>
+              </div>
+            </article>
+
+            <article class="treatment-card reveal">
+              <img
+                src="assets/images/treatments/preenchimento.webp"
+                alt="Preenchimento labial natural"
+                loading="lazy"
+                decoding="async"
+              />
+              <div>
+                <span>06</span>
+                <h3>Preenchimento labial</h3>
+                <p>
+                  Volume e contorno com delicadeza, proporção e naturalidade.
+                </p>
+              </div>
+            </article>
+
+            <article class="treatment-card reveal">
+              <img
+                src="assets/images/treatments/depilacao.webp"
+                alt="Depilação a laser premium"
+                loading="lazy"
+                decoding="async"
+              />
+              <div>
+                <span>07</span>
+                <h3>Depilação a laser</h3>
+                <p>
+                  Tecnologia para mais praticidade, conforto e cuidado com a
+                  pele.
+                </p>
+              </div>
+            </article>
+
+            <article class="treatment-card reveal">
+              <img
+                src="assets/images/treatments/corporal.webp"
+                alt="Tratamento corporal premium"
+                loading="lazy"
+                decoding="async"
+              />
+              <div>
+                <span>08</span>
+                <h3>Tratamentos corporais</h3>
+                <p>
+                  Protocolos corporais personalizados para bem-estar e
+                  autoestima.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section about" id="sobre">
+        <div class="container about__grid">
+          <div class="about__media reveal">
+            <img
+              src="assets/images/about/profissional.webp"
+              alt="Profissional da Áurea Estética"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          <div class="about__content reveal">
+            <span class="eyebrow">Sobre a clínica</span>
+
+            <h2>Estética sofisticada com foco em naturalidade e confiança.</h2>
+
+            <p>
+              Na Áurea Estética, cada detalhe foi pensado para oferecer uma
+              experiência premium, acolhedora e personalizada. Unimos
+              tecnologia, segurança e sensibilidade estética para valorizar sua
+              beleza sem exageros.
+            </p>
+
+            <div class="about__list">
+              <div>
+                <img src="assets/icons/check.svg" alt="" />
+                <span>Atendimento individualizado</span>
+              </div>
+
+              <div>
+                <img src="assets/icons/check.svg" alt="" />
+                <span>Ambiente sofisticado e acolhedor</span>
+              </div>
+
+              <div>
+                <img src="assets/icons/check.svg" alt="" />
+                <span>Protocolos seguros e modernos</span>
+              </div>
+
+              <div>
+                <img src="assets/icons/check.svg" alt="" />
+                <span>Resultados naturais e elegantes</span>
+              </div>
+            </div>
+
+            <a
+              href="https://wa.me/5583998326680"
+              class="btn btn--primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Conversar no WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section experience">
+        <div class="container experience__grid">
+          <div class="experience__content reveal">
+            <span class="eyebrow">Experiência premium</span>
+
+            <h2>Uma jornada de cuidado, sofisticação e autoestima.</h2>
+
+            <p>
+              Mais do que procedimentos, criamos experiências que valorizam seu
+              bem-estar e sua confiança através de um atendimento humanizado e
+              altamente cuidadoso.
+            </p>
+          </div>
+
+          <div class="experience__cards">
+            <article class="experience-card reveal">
+              <img
+                src="assets/images/about/ambiente.webp"
+                alt="Ambiente sofisticado da clínica"
+                loading="lazy"
+                decoding="async"
+              />
+
+              <h3>Ambiente acolhedor</h3>
+
+              <p>
+                Espaços planejados para transmitir conforto, tranquilidade e
+                exclusividade.
+              </p>
+            </article>
+
+            <article class="experience-card reveal">
+              <img
+                src="assets/images/about/atendimento.webp"
+                alt="Atendimento premium em clínica estética"
+                loading="lazy"
+                decoding="async"
+              />
+
+              <h3>Atendimento humanizado</h3>
+
+              <p>
+                Escuta atenta e planejamento individual para resultados mais
+                harmoniosos.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section results" id="resultados">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="eyebrow">Resultados</span>
+
+            <h2>Beleza realçada com leveza, proporção e naturalidade.</h2>
+
+            <p>
+              Cada procedimento é realizado com atenção aos detalhes para
+              preservar sua identidade e valorizar sua beleza de forma elegante.
+            </p>
+          </div>
+
+          <div class="results__grid">
+            <article class="result-card reveal">
+              <img
+                src="assets/images/results/resultado-1.webp"
+                alt="Resultado estético natural"
+                loading="lazy"
+                decoding="async"
+              />
+            </article>
+
+            <article class="result-card result-card--large reveal">
+              <img
+                src="assets/images/results/resultado-2.webp"
+                alt="Resultado premium harmonização facial"
+                loading="lazy"
+                decoding="async"
+              />
+            </article>
+
+            <article class="result-card reveal">
+              <img
+                src="assets/images/results/resultado-3.webp"
+                alt="Resultado sofisticado em clínica estética"
+                loading="lazy"
+                decoding="async"
+              />
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section testimonials" id="depoimentos">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="eyebrow">Depoimentos</span>
+
+            <h2>Experiências que refletem confiança e satisfação.</h2>
+
+            <p>
+              Resultados naturais e atendimento premium que transformam
+              autoestima e bem-estar.
+            </p>
+          </div>
+
+          <div class="testimonials__grid">
+            <article class="testimonial-card reveal">
+              <img
+                src="assets/images/testimonials/cliente-1.webp"
+                alt="Cliente satisfeita Áurea Estética"
+                loading="lazy"
+                decoding="async"
+              />
+
+              <div class="stars">★★★★★</div>
+
+              <p>
+                “Atendimento impecável, ambiente lindo e resultado extremamente
+                natural.”
+              </p>
+
+              <h3>Mariana Costa</h3>
+              <span>Paciente</span>
+            </article>
+
+            <article class="testimonial-card reveal">
+              <img
+                src="assets/images/testimonials/cliente-2.webp"
+                alt="Paciente harmonização facial"
+                loading="lazy"
+                decoding="async"
+              />
+
+              <div class="stars">★★★★★</div>
+
+              <p>
+                “Me senti acolhida desde a avaliação. A clínica transmite muita
+                confiança.”
+              </p>
+
+              <h3>Amanda Lima</h3>
+              <span>Paciente</span>
+            </article>
+
+            <article class="testimonial-card reveal">
+              <img
+                src="assets/images/testimonials/cliente-3.webp"
+                alt="Paciente satisfeita tratamento facial"
+                loading="lazy"
+                decoding="async"
+              />
+
+              <div class="stars">★★★★★</div>
+
+              <p>
+                “Resultado sofisticado, delicado e exatamente como eu buscava.”
+              </p>
+
+              <h3>Juliana Alves</h3>
+              <span>Paciente</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section faq" id="faq">
+        <div class="container faq__grid">
+          <div class="faq__content reveal">
+            <span class="eyebrow">Perguntas frequentes</span>
+
+            <h2>Clareza e segurança antes de qualquer decisão.</h2>
+
+            <p>
+              Reunimos as principais dúvidas para que você compreenda melhor os
+              tratamentos e saiba exatamente o que esperar da sua avaliação.
+            </p>
+
+            <img
+              src="assets/images/about/faq-premium.webp"
+              alt="Atendimento estético premium"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          <div class="faq__accordion reveal">
+            <article class="faq-item">
+              <button type="button" aria-expanded="false">
+                Os procedimentos são seguros?
+                <span></span>
+              </button>
+
+              <div class="faq-item__content">
+                <p>
+                  Sim. Todos os protocolos seguem critérios rigorosos de
+                  segurança, avaliação individual e acompanhamento profissional.
+                </p>
+              </div>
+            </article>
+
+            <article class="faq-item">
+              <button type="button" aria-expanded="false">
+                Os resultados ficam naturais?
+                <span></span>
+              </button>
+
+              <div class="faq-item__content">
+                <p>
+                  Nosso foco é valorizar sua beleza natural com equilíbrio,
+                  elegância e leveza.
+                </p>
+              </div>
+            </article>
+
+            <article class="faq-item">
+              <button type="button" aria-expanded="false">
+                Preciso passar por avaliação?
+                <span></span>
+              </button>
+
+              <div class="faq-item__content">
+                <p>
+                  Sim. A avaliação é essencial para compreender suas
+                  necessidades e indicar o protocolo ideal para você.
+                </p>
+              </div>
+            </article>
+
+            <article class="faq-item">
+              <button type="button" aria-expanded="false">
+                Quanto tempo duram os resultados?
+                <span></span>
+              </button>
+
+              <div class="faq-item__content">
+                <p>
+                  A duração varia conforme o procedimento, metabolismo e
+                  cuidados individuais.
+                </p>
+              </div>
+            </article>
+
+            <article class="faq-item">
+              <button type="button" aria-expanded="false">
+                Como faço para agendar?
+                <span></span>
+              </button>
+
+              <div class="faq-item__content">
+                <p>
+                  Você pode agendar diretamente pelo WhatsApp de forma rápida e
+                  prática.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta">
+        <picture class="final-cta__bg">
+          <img
+            src="assets/images/hero/cta-final.webp"
+            alt="Clínica estética premium"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+
+        <div class="final-cta__overlay"></div>
+
+        <div class="container final-cta__container reveal">
+          <span class="eyebrow">Sua melhor versão começa agora</span>
+
+          <h2>
+            Agende sua avaliação e descubra um cuidado estético sofisticado.
+          </h2>
+
+          <p>
+            Uma experiência premium pensada para valorizar sua beleza com
+            segurança, naturalidade e excelência em cada detalhe.
+          </p>
+
+          <a
+            href="https://wa.me/5583998326680"
+            class="btn btn--primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Agendar no WhatsApp
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="contato">
+      <div class="container footer__grid">
+        <div class="footer__brand">
+          <img src="assets/logos/aurea-logo-dark.webp" alt="Áurea Estética" />
+
+          <p>
+            Clínica de estética avançada com foco em naturalidade, segurança e
+            experiência premium.
+          </p>
+        </div>
+
+        <div class="footer__column">
+          <h3>Contato</h3>
+
+          <a href="tel:+5583998326680">(83) 99832-6680</a>
+
+          <a href="mailto:contato@aureaestetica.com.br">
+            contato@aureaestetica.com.br
+          </a>
+
+          <a
+            href="https://instagram.com/aureaestetica"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            @aureaestetica
+          </a>
+        </div>
+
+        <div class="footer__column">
+          <h3>Localização</h3>
+
+          <p>Av. das Flores, 1280</p>
+          <p>João Pessoa — PB</p>
+          <p>Segunda a sexta, 08h às 19h</p>
+        </div>
+
+        <div class="footer__column">
+          <h3>Tratamentos</h3>
+
+          <p>Botox</p>
+          <p>Harmonização facial</p>
+          <p>Skinbooster</p>
+          <p>Depilação a laser</p>
+        </div>
+      </div>
+
+      <div class="container footer__bottom">
+        <p>© 2026 Áurea Estética. Todos os direitos reservados.</p>
+
+        <p>Desenvolvido por Segundo Almeida</p>
+      </div>
+    </footer>
+
+    <a
+      href="https://wa.me/5583998326680"
+      class="whatsapp-float"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Conversar no WhatsApp"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20 11.8a8 8 0 0 1-11.9 7L4 20l1.2-4A8 8 0 1 1 20 11.8Z" />
+        <path
+          d="M8.8 8.6c.2-.5.5-.5.7-.5h.5c.2 0 .4 0 .6.4l.7 1.6c.1.3.1.5-.1.7l-.4.5c-.1.1-.2.3-.1.5.4.8 1.2 1.8 2.5 2.5.3.2.5.1.7-.1l.6-.6c.2-.2.4-.2.7-.1l1.5.7c.4.2.4.4.4.6 0 .8-.6 1.5-1.4 1.7-1.1.3-3.1-.2-5.1-2.2-2-2-2.6-4.1-2.3-5.2.1-.3.2-.4.4-.5Z"
+        />
+      </svg>
+    </a>
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+      ↑
+    </button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
