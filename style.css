@@ -11,7 +11,12 @@
   --color-gold: #c6a77d;
   --color-gold-light: #d6b894;
   --color-white: #ffffff;
-  --color-dark: #14110f;
+  --color-dark: #181513;
+  --color-graphite: #1b1816;
+  --color-graphite-soft: #241f1c;
+  --color-graphite-deep: #100d0c;
+  --gradient-graphite: linear-gradient(135deg, #201c19 0%, #171310 48%, #0f0d0c 100%);
+  --texture-gold: radial-gradient(circle at 18% 12%, rgba(214, 184, 148, 0.16), transparent 34%);
 
   --font-heading: "Space Grotesk", sans-serif;
   --font-body: "Inter", sans-serif;
@@ -38,10 +43,13 @@
 
   --shadow-soft: 0 24px 80px rgba(64, 46, 36, 0.1);
   --shadow-card: 0 24px 70px rgba(64, 46, 36, 0.12);
+  --shadow-card-hover: 0 34px 96px rgba(64, 46, 36, 0.18);
   --shadow-gold: 0 18px 48px rgba(198, 167, 125, 0.24);
+  --shadow-gold-hover: 0 24px 72px rgba(198, 167, 125, 0.34);
 
-  --transition: 260ms cubic-bezier(0.22, 1, 0.36, 1);
-  --transition-slow: 680ms cubic-bezier(0.22, 1, 0.36, 1);
+  --transition: 280ms cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-slow: 760ms cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-luxury: 520ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 *,
@@ -60,7 +68,8 @@ body {
   font-family: var(--font-body);
   color: var(--color-text);
   background:
-    radial-gradient(circle at top left, rgba(214, 184, 148, 0.2), transparent 32%),
+    radial-gradient(circle at 12% 8%, rgba(214, 184, 148, 0.22), transparent 32%),
+    radial-gradient(circle at 88% 18%, rgba(198, 167, 125, 0.12), transparent 28%),
     linear-gradient(180deg, var(--color-bg), #fffaf6 42%, var(--color-bg));
   line-height: 1.6;
   overflow-x: hidden;
@@ -106,6 +115,8 @@ button {
 .section {
   position: relative;
   padding-block: var(--space-15);
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 920px;
 }
 
 .eyebrow {
@@ -140,8 +151,9 @@ h1,
 h2,
 h3 {
   font-family: var(--font-heading);
-  letter-spacing: -0.045em;
+  letter-spacing: -0.052em;
   color: var(--color-text);
+  text-wrap: balance;
 }
 
 h1 {
@@ -162,6 +174,8 @@ h3 {
 
 p {
   color: var(--color-muted);
+  letter-spacing: -0.012em;
+  text-wrap: pretty;
 }
 
 .section-heading {
@@ -189,13 +203,15 @@ p {
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.01em;
+  overflow: hidden;
   transition:
-    transform var(--transition),
+    transform var(--transition-luxury),
     border-color var(--transition),
     background var(--transition),
-    box-shadow var(--transition),
+    box-shadow var(--transition-luxury),
     color var(--transition);
   isolation: isolate;
+  will-change: transform;
 }
 
 .btn::after {
@@ -205,16 +221,23 @@ p {
   z-index: -1;
   border-radius: inherit;
   opacity: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.28), transparent);
-  transition: opacity var(--transition);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.34), transparent 62%);
+  transition:
+    opacity var(--transition),
+    transform var(--transition-luxury);
 }
 
 .btn:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.012);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.985);
 }
 
 .btn:hover::after {
   opacity: 1;
+  transform: translateX(6%);
 }
 
 .btn:focus-visible,
@@ -233,7 +256,7 @@ p {
 }
 
 .btn--primary:hover {
-  box-shadow: 0 24px 64px rgba(198, 167, 125, 0.34);
+  box-shadow: var(--shadow-gold-hover);
 }
 
 .btn--ghost {
@@ -311,8 +334,8 @@ p {
   width: 100%;
   padding-block: 10px;
   border-bottom: 1px solid rgba(198, 167, 125, 0.1);
-  background: rgba(247, 244, 241, 0.82);
-  backdrop-filter: blur(18px);
+  background: rgba(247, 244, 241, 0.78);
+  backdrop-filter: blur(18px) saturate(1.08);
   transition:
     padding var(--transition),
     background var(--transition),
@@ -467,11 +490,12 @@ p {
     linear-gradient(
       90deg,
       rgba(247, 244, 241, 0.98) 0%,
-      rgba(247, 244, 241, 0.9) 34%,
-      rgba(247, 244, 241, 0.42) 60%,
-      rgba(247, 244, 241, 0.14) 100%
+      rgba(247, 244, 241, 0.9) 32%,
+      rgba(247, 244, 241, 0.46) 58%,
+      rgba(247, 244, 241, 0.12) 100%
     ),
-    radial-gradient(circle at 18% 50%, rgba(214, 184, 148, 0.24), transparent 34%);
+    radial-gradient(circle at 18% 48%, rgba(214, 184, 148, 0.28), transparent 32%),
+    radial-gradient(circle at 72% 20%, rgba(255, 255, 255, 0.16), transparent 26%);
 }
 
 .hero__container {
@@ -506,11 +530,21 @@ p {
 
 .hero__trust div {
   padding: var(--space-3);
-  border: 1px solid rgba(31, 31, 31, 0.08);
+  border: 1px solid rgba(198, 167, 125, 0.18);
   border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.56);
+  backdrop-filter: blur(14px) saturate(1.08);
   box-shadow: 0 16px 48px rgba(64, 46, 36, 0.06);
+  transition:
+    transform var(--transition-luxury),
+    box-shadow var(--transition-luxury),
+    border-color var(--transition);
+}
+
+.hero__trust div:hover {
+  transform: translateY(-4px);
+  border-color: rgba(198, 167, 125, 0.34);
+  box-shadow: 0 24px 64px rgba(64, 46, 36, 0.12);
 }
 
 .hero__trust strong {
@@ -553,6 +587,16 @@ p {
     rgba(255, 255, 255, 0.62);
   box-shadow: var(--shadow-card);
   contain: layout paint;
+  transition:
+    transform var(--transition-luxury),
+    box-shadow var(--transition-luxury),
+    border-color var(--transition);
+}
+
+.authority__item:hover {
+  transform: translateY(-6px);
+  border-color: rgba(198, 167, 125, 0.34);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .authority__item span {
@@ -571,7 +615,8 @@ p {
 
 .treatments {
   background:
-    radial-gradient(circle at 82% 12%, rgba(198, 167, 125, 0.12), transparent 30%),
+    radial-gradient(circle at 82% 12%, rgba(198, 167, 125, 0.14), transparent 30%),
+    radial-gradient(circle at 12% 82%, rgba(255, 255, 255, 0.42), transparent 34%),
     linear-gradient(180deg, transparent, rgba(239, 231, 225, 0.42), transparent);
 }
 
@@ -590,10 +635,12 @@ p {
   background: var(--color-card-solid);
   box-shadow: 0 18px 54px rgba(64, 46, 36, 0.08);
   transition:
-    transform var(--transition),
-    box-shadow var(--transition),
-    border-color var(--transition);
+    transform var(--transition-luxury),
+    box-shadow var(--transition-luxury),
+    border-color var(--transition),
+    filter var(--transition);
   contain: layout paint;
+  will-change: transform;
 }
 
 .treatment-card::after {
@@ -641,9 +688,10 @@ p {
 }
 
 .treatment-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(198, 167, 125, 0.42);
-  box-shadow: 0 30px 88px rgba(64, 46, 36, 0.18);
+  transform: translateY(-10px) scale(1.01);
+  border-color: rgba(198, 167, 125, 0.46);
+  box-shadow: 0 34px 96px rgba(64, 46, 36, 0.2);
+  filter: saturate(1.03);
 }
 
 .treatment-card:hover img {
@@ -663,7 +711,7 @@ p {
   position: absolute;
   inset: 0;
   z-index: -1;
-  opacity: 0.26;
+  opacity: 0.22;
   background-image: url("assets/images/about/section-bg.webp");
   background-size: cover;
   background-position: center;
@@ -766,6 +814,17 @@ p {
   background: rgba(255, 255, 255, 0.58);
   box-shadow: var(--shadow-card);
   contain: layout paint;
+  transition:
+    transform var(--transition-luxury),
+    box-shadow var(--transition-luxury),
+    border-color var(--transition);
+  will-change: transform;
+}
+
+.experience-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(198, 167, 125, 0.34);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .experience-card:nth-child(2) {
@@ -804,6 +863,16 @@ p {
   background: var(--color-bg-soft);
   box-shadow: var(--shadow-card);
   contain: layout paint;
+  transition:
+    transform var(--transition-luxury),
+    box-shadow var(--transition-luxury),
+    border-color var(--transition);
+}
+
+.result-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(198, 167, 125, 0.36);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .result-card img,
@@ -845,14 +914,17 @@ p {
     linear-gradient(145deg, rgba(255, 255, 255, 0.78), rgba(255, 250, 246, 0.58)), var(--color-card);
   box-shadow: var(--shadow-card);
   transition:
-    transform var(--transition),
-    box-shadow var(--transition);
+    transform var(--transition-luxury),
+    box-shadow var(--transition-luxury),
+    border-color var(--transition);
   contain: layout paint;
+  will-change: transform;
 }
 
 .testimonial-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 28px 80px rgba(64, 46, 36, 0.15);
+  transform: translateY(-8px) scale(1.006);
+  border-color: rgba(198, 167, 125, 0.34);
+  box-shadow: 0 30px 88px rgba(64, 46, 36, 0.16);
 }
 
 .testimonial-card img {
@@ -935,6 +1007,16 @@ p {
   background: rgba(255, 250, 246, 0.82);
   box-shadow: 0 18px 56px rgba(64, 46, 36, 0.08);
   backdrop-filter: blur(12px);
+  transition:
+    transform var(--transition-luxury),
+    box-shadow var(--transition-luxury),
+    border-color var(--transition);
+}
+
+.faq-item:hover {
+  transform: translateY(-3px);
+  border-color: rgba(198, 167, 125, 0.32);
+  box-shadow: 0 24px 70px rgba(64, 46, 36, 0.12);
 }
 
 .faq-item button {
@@ -1009,8 +1091,9 @@ p {
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(90deg, rgba(23, 21, 20, 0.88), rgba(23, 21, 20, 0.58), rgba(23, 21, 20, 0.12)),
-    radial-gradient(circle at 18% 54%, rgba(198, 167, 125, 0.34), transparent 36%);
+    linear-gradient(90deg, rgba(24, 21, 19, 0.9), rgba(31, 27, 24, 0.64), rgba(24, 21, 19, 0.2)),
+    radial-gradient(circle at 18% 54%, rgba(198, 167, 125, 0.34), transparent 36%),
+    radial-gradient(circle at 76% 22%, rgba(255, 255, 255, 0.08), transparent 30%);
 }
 
 .final-cta__container {
@@ -1043,8 +1126,9 @@ p {
   overflow: hidden;
   padding-block: var(--space-10) var(--space-3);
   background:
-    radial-gradient(circle at top left, rgba(198, 167, 125, 0.08), transparent 34%),
-    var(--color-dark);
+    radial-gradient(circle at 12% 0%, rgba(198, 167, 125, 0.14), transparent 34%),
+    radial-gradient(circle at 86% 22%, rgba(255, 255, 255, 0.045), transparent 32%),
+    var(--gradient-graphite);
   color: var(--color-white);
 }
 
@@ -1246,14 +1330,28 @@ p {
   margin: var(--space-3) auto var(--space-5);
 }
 
+/* PERFORMANCE-FIRST CONTAINMENT */
+
+.treatments,
+.about,
+.experience,
+.results,
+.testimonials,
+.faq,
+.final-cta,
+.footer {
+  contain: layout paint;
+}
+
 /* MOTION */
 
 .reveal {
   opacity: 0;
   transform: translateY(28px);
   transition:
-    opacity 780ms cubic-bezier(0.22, 1, 0.36, 1),
-    transform 780ms cubic-bezier(0.22, 1, 0.36, 1);
+    opacity 860ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 860ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
 .reveal.visible {
@@ -1545,7 +1643,7 @@ p {
 
   .final-cta__overlay {
     background:
-      linear-gradient(180deg, rgba(23, 21, 20, 0.78), rgba(23, 21, 20, 0.7)),
+      linear-gradient(180deg, rgba(24, 21, 19, 0.8), rgba(18, 15, 14, 0.72)),
       radial-gradient(circle at 28% 50%, rgba(198, 167, 125, 0.26), transparent 42%);
   }
 
